@@ -1,4 +1,4 @@
-package ua.edu.ucu.apps.payment;
+package ua.edu.ucu.apps.Payment;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
 
     @GetMapping("payment")
-	public List<CreditcardPaymentStrategy> getPayment(){
-		return List.of(new CreditcardPaymentStrategy());
+	public List<CreditCardPaymentStrategy> getPayment(){
+		return List.of(new CreditCardPaymentStrategy());
 	}
 }

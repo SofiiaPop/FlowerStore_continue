@@ -1,10 +1,6 @@
-package ua.edu.ucu.apps.payment;
-
-import java.util.List;
-
-import ua.edu.ucu.apps.flower.store.Item;
+package ua.edu.ucu.apps.Payment;
+import ua.edu.ucu.apps.flower.store.Order;
 
 public interface Payment {
-    void pay(List<Item> items);
-    String getDescription();
+    void pay(Order order);
 }

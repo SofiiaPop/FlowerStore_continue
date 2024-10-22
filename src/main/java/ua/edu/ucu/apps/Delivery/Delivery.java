@@ -1,13 +1,12 @@
 package ua.edu.ucu.apps.Delivery;
 
-import java.util.List;
-
+import ua.edu.ucu.apps.flower.store.Item;
 import ua.edu.ucu.apps.flower.store.Order;
 
 public class Delivery {
-    public void deliver(List<Order> orders) {
-        for (Order order : orders) {
-            System.out.println("Delivering: " + order.getDetails());
+    public void deliver(Order order) {
+        for (Item item : order.getItems()) {
+            System.out.println("Delivering: " + item.getDescription());
         }
     }
 

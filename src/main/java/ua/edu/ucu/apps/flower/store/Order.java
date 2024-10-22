@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 import lombok.Getter;
 import ua.edu.ucu.apps.Delivery.Delivery;
-import ua.edu.ucu.apps.payment.Payment;
+import ua.edu.ucu.apps.Payment.Payment;
 
 public class Order {
     @Getter
@@ -49,7 +49,7 @@ public class Order {
     public void processOrder() {
         double totalPrice = calculateTotalPrice();
         System.out.println("Processing payment of $" + totalPrice);
-        payment.pay(this.items);
+        payment.pay(this);
         delivery.deliver(getDetails());
         System.out.println("Order processed successfully!");
     }
