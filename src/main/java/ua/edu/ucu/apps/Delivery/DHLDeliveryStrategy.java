@@ -2,6 +2,7 @@ package ua.edu.ucu.apps.Delivery;
 
 import ua.edu.ucu.apps.flower.store.Item;
 import ua.edu.ucu.apps.flower.store.Order;
+import java.util.List;
 
 public class DHLDeliveryStrategy extends Delivery{
     private double price;
@@ -13,7 +14,7 @@ public class DHLDeliveryStrategy extends Delivery{
     }
    
     @Override
-    public void deliver(Order order) {
+    public void deliver(List<Order> orders) {
         System.out.println("Delivering order via DHL: /n");
         super.deliver(order);
     }

@@ -50,7 +50,7 @@ public class Order {
         double totalPrice = calculateTotalPrice();
         System.out.println("Processing payment of $" + totalPrice);
         payment.pay(this);
-        delivery.deliver(getDetails());
+        delivery.deliver(this);
         System.out.println("Order processed successfully!");
     }
 }
