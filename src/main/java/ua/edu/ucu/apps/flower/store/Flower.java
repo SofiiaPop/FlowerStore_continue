@@ -5,8 +5,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
@@ -19,17 +21,18 @@ public class Flower extends Item{
     private FlowerType type;
     private double price;
 
-    public Flower() {
-        super("Default Description");
-    }
-
-    public Flower(String description, double price) {
+    public Flower(String description) {
         super(description);
-        this.price = price;
     }
 
     @Override
     public double price() {
         return price;
+    }
+
+    public Flower(long l, double d, FlowerType rose) {
+        this.id = l;
+        this.price = d;
+        this.type = rose;
     }
 }

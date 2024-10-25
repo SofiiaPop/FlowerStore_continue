@@ -7,7 +7,7 @@ public class CreditCardPaymentStrategy implements Payment {
     private String description;
     @Override
     public void pay(Order order) {
-        String description = "Paid with PayPal:" + order.calculateTotalPrice();
+        description = "Paid with credit card:" + order.calculateTotalPrice();
         System.out.print(description);
     }
 }

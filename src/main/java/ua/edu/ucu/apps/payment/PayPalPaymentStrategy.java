@@ -5,8 +5,10 @@ import ua.edu.ucu.apps.flower.store.Order;
 
 @Getter
 public class PayPalPaymentStrategy implements Payment {
+    private String description;
     @Override
     public void pay(Order order) {
-        System.out.printf("Paid with PayPal:", order.calculateTotalPrice());
+        description = "Paid with PayPal:" + order.calculateTotalPrice();
+        System.out.print(description);
     }
 }

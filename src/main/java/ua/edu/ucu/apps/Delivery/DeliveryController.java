@@ -1,24 +1,18 @@
 package ua.edu.ucu.apps.Delivery;
 
+import java.util.ArrayList;
 import java.util.List;
-import ua.edu.ucu.apps.flower.store.Order;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class DeliveryController {
-    private Delivery deliveryStrategy;
-
-    public void setDeliveryStrategy(Delivery deliveryStrategy) {
-        this.deliveryStrategy = deliveryStrategy;
-    }
-
-    public void deliverOrders(List<Order> orders) {
-        deliveryStrategy.deliver(orders);
-    }
-
-    public void deliverOrderDetails(Order order) {
-        deliveryStrategy.deliver(order);
-    }
-
-    public String getDeliveryStrategyInfo() {
-        return "Current delivery strategy: " + deliveryStrategy.getClass().getSimpleName();
+	@GetMapping("delivery")
+    public List<Delivery> getDelivery() {
+        List<Delivery> deliveryStrategies = new ArrayList<>();
+        deliveryStrategies.add(new PostDeliveryStrategy());
+        deliveryStrategies.add(new DHLDeliveryStrategy());
+        return deliveryStrategies;
     }
 }

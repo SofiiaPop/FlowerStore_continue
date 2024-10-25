@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import ua.edu.ucu.apps.Delivery.PostDeliveryStrategy;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
 
 public class PostDeliveryStrategyTest {
     private PostDeliveryStrategy delivery;
@@ -26,7 +28,9 @@ public class PostDeliveryStrategyTest {
 
     @Test
     public void testDeliver() {
-        delivery.deliver(order);
+        List<Order> orders = new ArrayList<>();
+        orders.add(order);
+        delivery.deliver(orders);
     }
 
     @Test

@@ -1,5 +1,7 @@
 package ua.edu.ucu.apps.flower.store;
 import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.Getter;
 import ua.edu.ucu.apps.Delivery.Delivery;
@@ -50,7 +52,9 @@ public class Order {
         double totalPrice = calculateTotalPrice();
         System.out.println("Processing payment of $" + totalPrice);
         payment.pay(this);
-        delivery.deliver(this);
+        List<Order> orders = new ArrayList<>();
+        orders.add(this);
+        delivery.deliver(orders);
         System.out.println("Order processed successfully!");
     }
 }

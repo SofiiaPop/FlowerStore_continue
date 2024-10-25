@@ -21,11 +21,14 @@ public class FlowerController {
 
     @GetMapping
 	public List<Flower> getFlowers(){
+		flowerService.addFlower(new Flower((long) 1, 10.0, FlowerType.ROSE, 150.0));
 		return flowerService.getFlowers();
 	}
 
 	@PostMapping
 	public void addFlower(@RequestBody Flower flower) {
+		System.out.println("POST request received");
+		System.out.println("24554");
 		flowerService.addFlower(flower);
 	}
 }

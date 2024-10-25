@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import ua.edu.ucu.apps.Delivery.DHLDeliveryStrategy;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
 
 public class DHLDeliveryStrategyTest {
     private DHLDeliveryStrategy delivery;
@@ -25,7 +27,9 @@ public class DHLDeliveryStrategyTest {
 
     @Test
     public void testDeliver() {
-        delivery.deliver(order);
+        List<Order> orders = new ArrayList<>();
+        orders.add(order);
+        delivery.deliver(orders);
     }
 
     @Test
