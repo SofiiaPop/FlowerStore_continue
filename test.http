@@ -1,12 +1,12 @@
 GET http://localhost:8080/api
-
-###
 POST http://localhost:8080/api
 Content-Type: application/json
 
 {
-  "id": 1,
-  "price": 100.0,
-  "sepalLength": 100.0,
-  "color": "blue"
+    "sepal_length": 6.5,
+    "type": "ROSE",
+    "price": 10.0,
+    "name": "Black Rose"
 }
+
+###
