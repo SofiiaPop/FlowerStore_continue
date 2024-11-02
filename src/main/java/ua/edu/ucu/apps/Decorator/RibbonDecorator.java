@@ -1,15 +1,14 @@
 package ua.edu.ucu.apps.Decorator;
 
 import ua.edu.ucu.apps.flower.store.FlowerBucket;
-import ua.edu.ucu.apps.flower.store.FlowerBucketDecorator;
 import ua.edu.ucu.apps.flower.store.Item;
 
-public class RibbonDecorator extends FlowerBucketDecorator {
+public class RibbonDecorator extends AbstractDecorator {
     private Item item;
 
     public RibbonDecorator(FlowerBucket flowerBucket) {
         super(flowerBucket);
-        // this.item = item;
+        this.item = flowerBucket; 
     }
 
     @Override
@@ -19,6 +18,6 @@ public class RibbonDecorator extends FlowerBucketDecorator {
 
     @Override
     public double price() {
-        return item.price() + 40;
+        return item.price() + 10;
     }
 }

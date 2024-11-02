@@ -32,9 +32,14 @@ public class Flower extends Item{
         super(description);
     }
 
+    public Flower(String name, Float price) {
+        this.name = name;
+        this.price = price;
+    }
+
     @Override
     public double price() {
-        return price;
+        return this.price;
     }
 
     public Flower(Long l, Float d, FlowerType type) {

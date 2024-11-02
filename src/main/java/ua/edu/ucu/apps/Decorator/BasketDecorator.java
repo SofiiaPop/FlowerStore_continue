@@ -1,15 +1,14 @@
 package ua.edu.ucu.apps.Decorator;
 
 import ua.edu.ucu.apps.flower.store.FlowerBucket;
-import ua.edu.ucu.apps.flower.store.FlowerBucketDecorator;
 import ua.edu.ucu.apps.flower.store.Item;
 
-public class BasketDecorator extends FlowerBucketDecorator {
+public class BasketDecorator extends AbstractDecorator {
     private Item item;
 
     public BasketDecorator(FlowerBucket flowerBucket) {
         super(flowerBucket);
-        // this.item = item;
+        this.item = flowerBucket; 
     }
 
     @Override
