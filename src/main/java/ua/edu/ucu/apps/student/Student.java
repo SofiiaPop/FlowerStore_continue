@@ -1,6 +1,10 @@
 package ua.edu.ucu.apps.student;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.Getter;
@@ -13,11 +17,16 @@ import java.time.Period;
 @Getter
 @Setter
 public class Student {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
    private String name;
    private String gender;
    @Transient
    private int age;
    private LocalDate dateOfBirth;
+   @Column(unique=true)
+   private String email;
    public int getAge() {
       if (dateOfBirth != null) {
           return Period.between(dateOfBirth, LocalDate.now()).getYears();

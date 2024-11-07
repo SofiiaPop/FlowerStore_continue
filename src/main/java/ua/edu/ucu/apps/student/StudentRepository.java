@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentRepository extends JpaRepository <Student, Long> {
-    @Query("SELECT u FROM app_user u WHERE u.email = ?1")
-    public Optional<Student> findByFirstName(String name);
+    // @Query("SELECT u FROM students u WHERE u.email = ?1")
+    // public Optional<Student> findByFirstName(String name);
 }
